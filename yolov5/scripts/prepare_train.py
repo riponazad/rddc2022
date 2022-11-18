@@ -7,7 +7,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description ="Prepare the list of names of all train images for yolo.")
 
     parser.add_argument("--images_dir", default="", help="Specify the path to the train images dataset folder.")
-    parser.add_argument("--out_name", default="train.txt", help="Specify the file name to save the list.")
+    parser.add_argument("--out_name", default="", help="Specify the file name to save the list.")
 
     args = parser.parse_args()
     return args
@@ -16,11 +16,17 @@ def parse_args():
 def create_list(images_dir, out_name):
     img_files = list(sorted(os.listdir(images_dir)))
 
-    with open(out_name, "w") as f:
-        for img in img_files:
-            full_image_path = os.path.join(images_dir, img)
+    n_samples = len(img_files)
+    n_train = int(n_samples*0.75)
+
+    with open(out_name+"_train.txt", "w") as f:
+        for i in range(n_train):
+            full_image_path = os.path.join(images_dir, img_files[i])
             f.write(str(full_image_path) + "\n")
-            #print(img)
+    with open(out_name+"_val.txt", "w") as f:
+        for i in range(n_train, n_samples):
+            full_image_path = os.path.join(images_dir, img_files[i])
+            f.write(str(full_image_path) + "\n")
 
 
 if __name__=='__main__':
