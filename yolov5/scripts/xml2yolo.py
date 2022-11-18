@@ -103,7 +103,7 @@ def main():
             
             if surfaceType=="D00" or surfaceType=="D10" or surfaceType=="D20" or surfaceType=="D40":
                 bndbox = objects.find('bndbox')
-                [minX,minY,maxX,maxY] = [int(child.text) for child in bndbox]
+                [minX,minY,maxX,maxY] = [int(float(child.text)) for child in bndbox]
                 [x,y,w,h] = getYoloNumbers(imageFile,minX,minY,maxX, maxY)
                 yoloOutput.write(str(outputCtoId[surfaceType])+" "+str(x)+" "+str(y)+" "+str(w)+" "+str(h)+"\n")
                 imageListDict[outputCtoId[surfaceType]].add(imageFile)
