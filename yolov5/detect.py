@@ -19,7 +19,7 @@ from utils.torch_utils import select_device, load_classifier, time_synchronized
 
 
 save_csv = True
-csv_f = open("results.csv","w")
+#csv_f = open(os.path.basename(os.path.normpath(opt.source))+"results.csv","w")
 
 
 def detect(save_img=False):
@@ -173,6 +173,8 @@ if __name__ == '__main__':
     parser.add_argument('--update', action='store_true', help='update all models')
     opt = parser.parse_args()
     print(opt)
+
+    csv_f = open(os.path.basename(os.path.normpath(opt.source))+"results.csv","w")
 
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
