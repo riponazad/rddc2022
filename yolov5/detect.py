@@ -171,10 +171,11 @@ if __name__ == '__main__':
     parser.add_argument('--agnostic-nms', action='store_true', help='class-agnostic NMS')
     parser.add_argument('--augment', action='store_true', help='augmented inference')
     parser.add_argument('--update', action='store_true', help='update all models')
+    parser.add_argument('--out_file', default='', help='Name of the output file')
     opt = parser.parse_args()
     print(opt)
 
-    csv_f = open(os.path.basename(os.path.normpath(opt.source))+"results.csv","w")
+    csv_f = open(opt.out_file+"results.csv","w")
 
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)
