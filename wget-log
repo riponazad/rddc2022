@@ -1,0 +1,11 @@
+--2022-11-25 01:20:23--  https://drive.google.com/uc?id=1YIT8wlJdog_0cqrsInpx80-qmpTReK6l
+Resolving drive.google.com (drive.google.com)... 172.217.21.174, 2a00:1450:400f:804::200e
+Connecting to drive.google.com (drive.google.com)|172.217.21.174|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘uc?id=1YIT8wlJdog_0cqrsInpx80-qmpTReK6l’
+
+               uc?id=1YIT8wlJ     [<=>                                               ]       0  --.-KB/s               uc?id=1YIT8wlJdog_0cqrsInpx80     [ <=>                                              ]   2.16K  --.-KB/s    in 0.001s  
+
+2022-11-25 01:20:23 (1.95 MB/s) - ‘uc?id=1YIT8wlJdog_0cqrsInpx80-qmpTReK6l’ saved [2210]
+
