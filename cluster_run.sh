@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SBATCH --time=24:00:00
-#SBATCH --job-name=Road_Damage_Detection
-#SBATCH --output=Road_Damage_Detection.out
-#SBATCH --error=Road_Damage_Detection.err
+#SBATCH --job-name=RDD2022
+#SBATCH --output=RDD_YOLOv5.out
+#SBATCH --error=RDD_YOLOv5.err
 #SBATCH --partition=CPUQ
 #SBATCH --gres=gpu:1
 #SBATCH --constraint=V100
